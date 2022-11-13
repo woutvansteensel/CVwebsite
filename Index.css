@@ -1,0 +1,176 @@
+
+
+body{
+    background-color: rgb(6, 10, 25);
+    margin: 0px;
+}
+
+
+
+#menu {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.menu-item {
+    color: white;
+    font-size: clamp(2rem, 4vw, 8rem);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+
+    display: block;
+    text-decoration: none;
+    border: none;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    transition: opacity 400ms ease;
+}
+
+#menu-items {
+    margin-left: clamp(4rem, 15vw, 48rem);
+    position: relative;
+    z-index: 2;
+}
+
+#menu-items:hover > .menu-item {
+    opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+    opacity: 1;
+}
+
+
+#menu-background-pattern{
+    height: 100vh;
+    width: 100vw;
+
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.1) 9%,
+        transparent 9%
+    );
+
+    background-position: 0% 0%;
+    background-size: 1.5vmin 1.5vmin;
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+    
+}
+
+
+#menu-background-image{
+    height: 100vh;
+    width: 100vw;
+
+
+    background-image: url(achtergrond5.jpg);
+    opacity: 0.1;
+
+    background-size: 130%;
+    background-position: 30% 5%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+}
+
+#menu[data-active-index="0"] > #menu-background-image{
+    background-position: 30% +10%;
+}
+#menu[data-active-index="1"] > #menu-background-image {
+    background-position: 30% +15%;
+}
+#menu[data-active-index="2"] > #menu-background-image {
+    background-position: 30% +20%;
+}
+#menu[data-active-index="3"] > #menu-background-image {
+    background-position: 30% +25%;
+}
+
+
+#menu-items:hover ~ #menu-background-pattern{
+    background-size: 1.4vmin 1.4vmin;
+    opacity: 0.5;
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern {
+    background-position: 0% -25%;
+}
+#menu[data-active-index="1"] > #menu-background-pattern {
+    background-position: 0% -50%;
+}
+#menu[data-active-index="2"] > #menu-background-pattern {
+    background-position: 0% -75%;
+}
+#menu[data-active-index="3"] > #menu-background-pattern {
+    background-position: 0% -100%;
+}
+
+
+
+
+#aboutMe{
+    height: max(20vw, 500px);
+    width: max(20vw, 300px);
+    border-radius: 0.2rem;
+    object-fit: cover;
+    position: fixed;
+    box-shadow: 15px;
+
+    right: 18rem;
+
+    transform: translateY(150%) scale(0.7);
+    transition: 800ms ease;
+    z-index: 3;
+}
+
+
+#skills{
+    height: max(20vw, 400px);
+    width: max(20vw, 400px);
+    object-fit: fill;
+    position: fixed;
+    right: 17rem;
+
+    transform: translateY(150%) scale(0.7);
+    transition: 800ms ease;
+    z-index: 3;
+}
+
+#menu[data-active-index="0"] > #aboutMe {
+    transform: translateY(0%) scale(1);
+}
+#menu[data-active-index="1"] > #aboutMe {
+    transform: translateY(-150%) scale(0.7);
+}
+#menu[data-active-index="2"] > #aboutMe {
+    transform: translateY(-150%) scale(0.7);
+}
+#menu[data-active-index="3"] > #aboutMe {
+    transform: translateY(-150%) scale(0.7);
+}
+
+#menu[data-active-index="0"] > #skills {
+    transform: translateY(150%) scale(0.7);
+}
+#menu[data-active-index="1"] > #skills {
+    transform: translateY(0%) scale(1);
+}
+#menu[data-active-index="2"] > #skills {
+    transform: translateY(-150%) scale(0.7);
+}
+#menu[data-active-index="3"] > #skills {
+    transform: translateY(-150%) scale(0.7);
+}

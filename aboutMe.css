@@ -1,0 +1,151 @@
+body{
+    background-color: rgb(6, 10, 25);
+    margin: 0px;
+    --border-color: rgb(255,255,255,0.1);
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    z-index: 2;
+}
+
+main{
+    flex-grow: 1;
+}
+
+main > article{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 2fr;
+    z-index: 1;
+}
+
+#sec-text{
+    margin-left: clamp(1rem, 10vw, 3rem);
+    margin-right: clamp(1rem, 10vw, 3rem);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, a, p, span {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav > .nav-sec{
+    padding: 1.5rem 1rem;
+    display: flex;
+    gap: 1rem;
+    border-left: 1px solid var(--border-color);
+    align-items: center;
+    justify-content: center;
+}
+
+#return > a > i {
+    font-size: 1.5rem;
+}
+
+#social > a > i {
+    font-size: 1.5rem;
+}
+
+#links > a {
+    font-size: 1rem;
+}
+
+#contact > a > i {
+    font-size: 1.5rem;
+}
+
+#contact{
+    justify-content: flex-end;
+}
+
+#return{
+    justify-content: flex-start;
+}
+
+
+#return,
+#links{
+    flex-basis: calc(100%/3);
+}
+
+#links{
+    gap: 6rem;
+}
+
+#social{
+    gap: 3rem;
+}
+
+#social,
+#contact{
+    flex-grow: 1;
+}
+
+#links:hover > .link {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#links:hover > .link:hover {
+    opacity: .8;
+    transform: scale(1.05);
+}
+
+#social:hover > .socials {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#social:hover > .socials:hover {
+    opacity: .8;
+    transform: scale(1.05);
+}
+
+#return:hover > .return-button:hover{
+    opacity: .8;
+    transform: scale(1.05);
+}
+
+#contact:hover > .contact-button:hover {
+    opacity: .8;
+    transform: scale(1.05);
+}
+
+img{
+    height: max(20vw, 800px);
+    width: 33.33vw;
+    object-fit: cover;
+}
+
+#aboutMe-background-image{
+    height: 100vh;
+    width: 100vw;
+
+
+    background-image: url(achtergrond5.jpg);
+    opacity: 0.1;
+
+    background-size: 130%;
+    background-position: 30% 5%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+}
+
